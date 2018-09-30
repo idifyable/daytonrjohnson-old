@@ -3,145 +3,163 @@
 <head>
 <title>Dayton Johnson</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Permanent+Marker" rel="stylesheet">
-<link href="/library/styles/normalize.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link href="/library/styles/base.css" rel="stylesheet">
 <link href="/library/styles/site.css" rel="stylesheet">
+<link href="/library/styles/mobile.css" rel="stylesheet" media="(max-width: 1008px)">
 </head>
 <body>
 <!-- Header -->
-<header>
-  <a href="/">Dayton Johnson</a>
-  <nav>
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/about/">About</a>
-      </li>
-      <li>
-        <a href="/about/#case-studies">Projects</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-<div class="wrapper" id="about">
-  <div class="column" id="portrait">
-    <img src='/images/content/portrait.jpg' alt='Dayton Johnson' />
-  </div>
-  <div id="about-text">
-    <h2>Who Am I?</h2>
-    <br>
-    <h1>Web Developer</h1>
-    <br>
-    <p>Hello, I'm a web developer, designer, and freelancer based in Eau Claire, Wisconsin. I'm passionate about coding and creating useful web-based products. I love learning new technologies and am focused on becoming a master of the web platform.</p>
-    <p>I create responsive websites, functional web application, and web-based software using HTML5, CSS3, PHP and Javascript. I have experience with jQuery, AJAX, Bootstrap and web design tools such as PhotoShop and Illustrator. I have experience working with clients on the importance of branding and have created branding kits for those who do not already.</p>
-    <p>I have some of my recent work posted on GitHub and below.</p>
-  </div>
-</div>
+  <header class="container">
+    <a href="/" class="logo-text">Dayton Johnson</a>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about/" class="active">About</a>
+        </li>
+        <li>
+          <a href="/about/#case-studies">Projects</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- About Me -->
+  <section class="about padded">
+    <div class="container">
+      <img src='/images/content/portrait.jpg' alt='Dayton Johnson' />
+      <div class="padded">
+        <h2>Who Am I?</h2>
+        <h1>Web Developer</h1>
+        <p>Hello, I'm a web developer, designer, and freelancer based in Eau Claire, Wisconsin. I'm passionate about coding and creating useful web-based products. I love learning new technologies and am focused on becoming a master of the web platform.</p>
+        <p>I create responsive websites, functional web application, and web-based software using HTML5, CSS3, PHP and Javascript. I have experience with jQuery, AJAX, Bootstrap and web design tools such as PhotoShop and Illustrator. I have experience working with clients on the importance of branding and have created branding kits for those who do not already.</p>
+        <p>I have some of my recent work posted on GitHub and below.</p>
+      </div>
+    </div>
+  </section>
 <!-- Case Studies -->
-<div class="wrapper" id="case-studies">
- <h3>Case Studies</h3>
-  <br>
-  <div class="case-study" id="yourfamilyrealty">
-    <div class="case-study-text">
-      <h1>Your Family Realty</h1>
-      <h2>Technologies Used</h2>
-      <ul>
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>Responsive Design</li>
-        <li>SVG</li>
-      </ul>
-      <div class="buttons">
-        <a href="http://www.yourfamilyrealty.com" target="_blank">
-          <button type="button">View Live</button>
-        </a>
-      </div>
-    </div>
-    <img src='/images/content/yourfamilyrealty.jpg' alt='Your Family Realty Project' />
-  </div>
-  <div class="case-study" id="weather">
-    <img src='/images/content/project-weather.PNG' alt='Weather Project' />
-    <div class="case-study-text" id="">
-      <h1>CSS3 Animated Weather Icons</h1>
-      <h2>Technologies Used</h2>
-      <ul>
-        <li>CSS3 Animations (Keyframes/Transitions)</li>
-        <li>CSS Psuedo Elements</li>
-        <li>jQuery</li>
-      </ul>
-      <div class="buttons">
-        <a href="https://idifyable.github.io/CSS3-Weather-Animations/" target="_blank">
-          <button type="button">View Live</button>
-        </a>
-        <a href="https://github.com/idifyable/CSS3-Weather-Animations" target="_blank">
-          <button type="button">View Repo</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="case-study" id="quotes">
-    <div class="case-study-text">
-      <h1>Quote-O-Matic</h1>
-      <h2>Technologies Used</h2>
-      <ul>
-        <li>jQuery</li>
-        <li>AJAX</li>
-        <li>Wordpress REST API</li>
-        <li>Twitter Button</li>
-      </ul>
-      <div class="buttons">
-        <a href="https://idifyable.github.io/Quote-O-Matic/" target="_blank">
-          <button type="button">View Live</button>
-        </a>
-        <a href="https://github.com/idifyable/Quote-O-Matic" target="_blank">
-          <button type="button">View Repo</button>
-        </a>
-      </div>
-    </div>
-    <img src='/images/content/project-quote.png' alt='Quote Machine Project' />
-  </div>
-  <div class="case-study" id="wikipedia">
-    <img src='/images/content/project-wikipedia.png' alt='Wikipedia Search Page Project' />
-    <div class="case-study-text">
-      <h1>Wikipedia Search Page</h1>
-      <h2>Technologies Used</h2>
-      <ul>
-        <li>jQuery</li>
-        <li>Wikimedia API</li>
-        <li>AJAX</li>
-      </ul>
-      <div class="buttons">
-        <a href="https://idifyable.github.io/Wikipedia-Search/" target="_blank">
-          <button type="button">View Live</button>
-        </a>
-        <a href="https://github.com/idifyable/Wikipedia-Search" target="_blank">
-          <button type="button">View Repo</button>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Footer -->
-<footer>
-  <nav>
-    <ul>
-      <li>
-        <a href="mailto:daytonrjohnson@gmail.com">Email</a>
+  <section class="case-studies padded" id="case-studies">
+    <h3>Case Studies</h3>
+    <ul class="case-studies container padded">
+      <li id="your-family-realty">
+        <div class="image-wrapper">
+          <img src='/images/content/yourfamilyrealty.jpg' alt='Your Family Realty Project' />
+        </div>
+        <div class="wrapper">
+          <h1>Your Family Realty</h1>
+          <h2>Technologies Used</h2>
+          <ul class="bulleted">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Responsive Design</li>
+            <li>SVG</li>
+          </ul>
+          <div class="buttons">
+            <a href="http://www.yourfamilyrealty.com" target="_blank">
+              <button type="button">View Live</button>
+            </a>
+          </div>
+        </div>
       </li>
-      <li>
-        <a href="https://github.com/idifyable" target="_blank">GitHub</a>
+      <li id="weather">
+        <div class="image-wrapper">
+          <img src='/images/content/project-weather.PNG' alt='Weather Project' />
+        </div>
+        <div class="wrapper" id="">
+          <h1>Animated Weather Icons</h1>
+          <h2>Technologies Used</h2>
+          <ul class="bulleted">
+            <li>CSS3 Animations (Keyframes/Transitions)</li>
+            <li>CSS Psuedo Elements</li>
+            <li>jQuery</li>
+          </ul>
+          <div class="buttons">
+            <a href="https://idifyable.github.io/CSS3-Weather-Animations/" target="_blank">
+              <button type="button">View Live</button>
+            </a>
+            <a href="https://github.com/idifyable/CSS3-Weather-Animations" target="_blank">
+              <button type="button">View Repo</button>
+            </a>
+          </div>
+        </div>
       </li>
-      <li>
-        <a href="http://codepen.io/idifyable/" target="_blank">CodePen</a>
+      <li class="case-study" id="quotes">
+        <div class="image-wrapper">
+          <img src='/images/content/project-quote.png' alt='Quote Machine Project' />
+        </div>
+        <div class="wrapper">
+          <h1>Quote-O-Matic</h1>
+          <h2>Technologies Used</h2>
+          <ul class="bulleted">
+            <li>jQuery</li>
+            <li>AJAX</li>
+            <li>Wordpress REST API</li>
+            <li>Twitter Button</li>
+          </ul>
+          <div class="buttons">
+            <a href="https://idifyable.github.io/Quote-O-Matic/" target="_blank">
+              <button type="button">View Live</button>
+            </a>
+            <a href="https://github.com/idifyable/Quote-O-Matic" target="_blank">
+              <button type="button">View Repo</button>
+            </a>
+          </div>
+        </div>
       </li>
-      <li>
-        <a href="https://twitter.com/idifyable" target="_blank">Twitter</a>
+      <li class="case-study" id="wikipedia">
+        <div class="image-wrapper">
+          <img src='/images/content/project-wikipedia.png' alt='Wikipedia Search Page Project' />
+        </div>
+        <div class="wrapper">
+          <h1>Wikipedia Search Page</h1>
+          <h2>Technologies Used</h2>
+          <ul class="bulleted">
+            <li>jQuery</li>
+            <li>Wikimedia API</li>
+            <li>AJAX</li>
+          </ul>
+          <div class="buttons">
+            <a href="https://idifyable.github.io/Wikipedia-Search/" target="_blank">
+              <button type="button">View Live</button>
+            </a>
+            <a href="https://github.com/idifyable/Wikipedia-Search" target="_blank">
+              <button type="button">View Repo</button>
+            </a>
+          </div>
+        </div>
       </li>
     </ul>
-  </nav>
-</footer>
+  </section>
+<!-- Footer -->
+  <footer>
+    <div class="container">
+      <ul class="links">
+        <li>
+          <a href="mailto:daytonrjohnson@gmail.com">
+            <i class="far fa-envelope"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/idifyable" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="http://codepen.io/idifyable/" target="_blank">
+            <i class="fab fa-codepen"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/idifyable" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 </body>
-</html> 
+</html>

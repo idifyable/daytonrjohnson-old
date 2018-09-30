@@ -5,115 +5,105 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Permanent+Marker" rel="stylesheet">
-<link href="/library/styles/normalize.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link href="/library/styles/base.css" rel="stylesheet">
 <link href="/library/styles/site.css" rel="stylesheet">
+<link href="/library/styles/mobile.css" rel="stylesheet" media="(max-width: 1008px)">
 </head>
 <body>
 <!-- Header -->
-<header>
-  <nav>
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/about/">About</a>
-      </li>
-      <li>
-        <a href="/about/#case-studies">Projects</a>
-      </li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/" class="active">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li>
+        <li>
+          <a href="/about/#case-studies">Projects</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 <!-- Hero Image -->
-<div id="hero-image">
-  <h1>Dayton Johnson</h1>
-  <h2>Web Developer</h2>
-</div>
+  <section class="neon-billboard">
+    <h1>Dayton Johnson</h1>
+    <h2>Web Developer</h2>
+  </section>
 <!-- About Me -->
-<div class="wrapper" id="about">
-  <div id="portrait">
-    <img src='/images/content/portrait.jpg' alt='Dayton Johnson' />
-  </div>
-  <div id="about-text">
-    <h2>Who Am I?</h2>
-    <br>
-    <h1>Web Developer</h1>
-    <br>
-    <p>Hello, I'm a web developer, designer, and freelancer based in Eau Claire, Wisconsin. I'm passionate about coding and creating useful web-based products. I love learning new technologies and am focused on becoming a master of the web platform.</p>
-    <a href="/about/">
-      <button type=button>More</button>
-    </a>
-  </div>
-</div>
-<div class="wrapper" id="about-after"></div>
-<!-- My Project s -->
-<h3>My Projects</h3>
-<div class="wrapper" id="projects">
-  <div class="project-card">
-    <a href="/about/#yourfamilyrealty">
-      <img src='/images/content/yourfamilyrealty.jpg' alt='Your Family Realty' />
-      <div class="picture-overlay">
-        <span class="overlay-text">Your Family Realty</span>
+  <section class="about home padded">
+    <div class="container">
+      <img src='/images/content/portrait.jpg' alt='Dayton Johnson' />
+      <div class="padded">
+        <h2>Who Am I?</h2>
+        <h1>Web Developer</h1>
+        <p>Hello, I'm a web developer, designer, and freelancer based in Eau Claire, Wisconsin. I'm passionate about coding and creating useful web-based products. I love learning new technologies and am focused on becoming a master of the web platform.</p>
+        <a href="/about/">
+          <button type=button>More</button>
+        </a>
       </div>
-    </a>
-  </div>
-  <div class="project-card">
-    <a href="/about/#weather">
-      <img src='/images/content/project-weather.png' alt='Weather Project' />
-      <div class="picture-overlay">
-        <span class="overlay-text">CSS3 Animated Weather Icons</span>
-      </div>
-    </a>
-  </div>
-  <div class="project-card">
-    <a href="/about/#quotes">
-      <img src='/images/content/project-quote.png' alt='Quote Machine Project' />
-      <div class="picture-overlay">
-        <span class="overlay-text">Design Quote Machine</span>
-      </div>
-    </a>
-  </div>
-  <div class="project-card">
-    <a href="/about/#wikipedia">
-      <img src='/images/content/project-wikipedia.png' alt='Wikipedia Page Project' />
-      <div class="picture-overlay">
-        <span class="overlay-text">Wikipedia Search Page</span>
-      </div>
-    </a>
-  </div>
-</div>
-<!-- Social Media Links -->
-<h3>Links</h3>
-<div class="wrapper" id="links">
-  <a href="https://github.com/idifyable" target="_blank">
-    <object data="/images/content/github.svg" type="image/svg+xml"></object>
-  </a>
-  <a href="http://codepen.io/idifyable/" target="_blank">
-    <object data="/images/content/codepen.svg" type="image/svg+xml"></object>
-  </a>
-  <a href="https://twitter.com/idifyable" target="_blank">
-    <object data="/images/content/twitter.svg" type="image/svg+xml"></object>
-  </a>
-</div>
+    </div>
+  </section>
+<!-- My Projects -->
+  <section class="projects padded">
+    <div class="container padded">
+      <h3>My Projects</h3>
+      <ul class="my-projects">
+        <li>
+          <a href="/about/#yourfamilyrealty">
+            <img src='/images/content/yourfamilyrealty.jpg' alt='Your Family Realty' />
+            <p>Your Family Realty</p>
+          </a>
+        </li>
+        <li>
+          <a href="/about/#weather">
+            <img src='/images/content/project-weather.png' alt='Weather Project' />
+            <p>Animated Weather Icons</p>
+          </a>
+        </li>
+        <li>
+          <a href="/about/#quotes">
+            <img src='/images/content/project-quote.png' alt='Quote Machine Project' />
+            <p>Design Quote Machine</p>
+          </a>
+        </li>
+        <li>
+          <a href="/about/#wikipedia">
+            <img src='/images/content/project-wikipedia.png' alt='Wikipedia Page Project' />
+            <p>Wikipedia Search Page</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 <!-- Footer -->
-<footer>
-  <nav>
-    <ul>
-      <li>
-        <a href="mailto:daytonrjohnson@gmail.com">Email</a>
-      </li>
-      <li>
-        <a href="https://github.com/idifyable" target="_blank">GitHub</a>
-      </li>
-      <li>
-        <a href="http://codepen.io/idifyable/" target="_blank">CodePen</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/idifyable" target="_blank">Twitter</a>
-      </li>
-    </ul>
-  </nav>
-</footer>
+  <footer>
+    <div class="container">
+      <ul class="links">
+        <li>
+          <a href="mailto:daytonrjohnson@gmail.com">
+            <i class="far fa-envelope"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/idifyable" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="http://codepen.io/idifyable/" target="_blank">
+            <i class="fab fa-codepen"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/idifyable" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
