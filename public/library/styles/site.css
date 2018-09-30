@@ -1,0 +1,379 @@
+/****************************************
+* Global
+****************************************/
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(black, #0b5fc3, #2970c6, #4e88cd);
+}
+
+/****************************************
+* Typography
+****************************************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+  line-height: 1em;
+}
+
+h1 {
+  font: normal bold 42px/1em 'Lato', sans-serif;
+}
+
+h2 {
+  font: normal normal 32px/1em 'Lato', sans-serif;
+}
+
+h3 {
+  color: #ffffff;
+  font: normal normal 24px/1em 'Lato', sans-serif;
+  text-align: center;
+  text-shadow: 0px 0px 5px black;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #111111;
+  font: normal normal 16px/1.7em 'Open Sans';
+}
+
+/* List Styles */
+
+ul.bulleted {
+  margin-bottom: 1rem;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+ul.bulleted > li {
+  margin-bottom: .5em;
+}
+
+/****************************************
+* Header
+****************************************/
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+}
+
+header > a.logo-text {
+  font: normal normal 42px/68px 'Permanent Marker', cursive;
+  text-align: center;
+  text-decoration: none;
+  animation: neon 7s ease-in-out infinite alternate;
+}
+
+header > a.logo-text + nav {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/****************************************
+* Navigation
+****************************************/
+
+header > nav {
+  margin: auto;
+  max-width: 350px;
+  width: 100%;
+  text-shadow: 0px 0px 5px black;
+}
+
+header > nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+header > nav ul > li {
+  flex-grow: 1;
+}
+
+header > nav ul > li a {
+  display: block;
+  padding: 1rem 0;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-top: 4px solid transparent;
+  transition: border-top 0.25s;
+}
+
+header > nav ul > li a.active,
+header > nav ul > li a:hover {
+  border-top: 4px solid #ffffff;
+  text-shadow: 0px 0px 10px grey;
+}
+
+/****************************************
+* Neon Billboard
+****************************************/
+
+section.neon-billboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0 7rem 0;
+  max-width: 100%;
+  color: white;
+  text-align: center;
+}
+
+section.neon-billboard h1 {
+  font: normal normal 80px/1em 'Permanent Marker', cursive;
+  animation: neon 7s ease-in-out infinite alternate;
+}
+
+section.neon-billboard h2 {
+  font: normal normal 48px/1em 'Permanent Marker', cursive;
+  animation: neon 7s ease-in-out infinite alternate-reverse;
+}
+
+/****************************************
+* About
+****************************************/
+
+section.about {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
+section.about.home {
+  margin-top: 0;
+}
+
+section.about img {
+  position: relative;
+  align-self: flex-start;
+  bottom: 3rem;
+  margin: 0 auto auto auto;
+  max-width: 350px;
+  border: 15px solid #ffffff;
+  box-shadow: 0px 20px 30px grey;
+}
+
+section.about > .container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 3rem;
+  margin-bottom: 3rem;
+  background-color: #ffffff;
+}
+
+section.about .container:after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: -3rem;
+  height: 3rem;
+  width: 100%;
+  background-color: lightslategray;
+}
+
+section.about .container > img {
+  width: 33.333%;
+  margin-right: 3rem;
+}
+
+section.about .container > div {
+  width: 66.666%;
+}
+
+/****************************************
+* Projects
+****************************************/
+
+section.projects h3 {
+  margin-bottom: 2rem;
+}
+
+ul.my-projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+ul.my-projects > li {
+  position: relative;
+  width: calc(25% - 1.5rem);
+}
+
+ul.my-projects > li img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 4px solid #ffffff;
+}
+
+ul.my-projects > li p {
+  color: #10243c;
+  font: normal bold 14px/1em 'Lato';
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+/****************************************
+* Case Study
+****************************************/
+
+ul.case-studies > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  background-color: #ffffff;
+}
+
+ul.case-studies > li > div.image-wrapper,
+ul.case-studies > li .wrapper {
+  width: 50%;
+}
+
+ul.case-studies > li img {
+  position: relative;
+  bottom: 3rem;
+  margin: 0 auto auto auto;
+  max-height: 300px;
+  border: 10px solid white;
+  box-shadow: 0px 10px 20px #000000;
+}
+
+ul.case-studies > li .wrapper + img {
+  margin: 0;
+  margin-left: 3rem;
+}
+
+ul.case-studies > li .buttons {
+  font-size: 0;
+}
+
+ul.case-studies > li .buttons > a:first-of-type button {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/****************************************
+* Footer
+****************************************/
+
+footer {
+  padding: 1rem 0;
+  background-color: #08111c;
+}
+
+footer ul.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 300px;
+}
+
+footer ul.links > li {
+  margin-bottom: 0;
+}
+
+footer ul.links > li i {
+  font-size: 26px;
+  line-height: 26px;
+  color: #5a6e87;
+  transition: color .5s;
+}
+
+footer ul.links > li:hover i {
+  color: #4d7ab3;
+}
+
+/****************************************
+* Buttons
+****************************************/
+
+.button,
+button {
+  position: relative;
+  padding: .75em 2em;
+  font-size: 18px;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px grey;
+  background-color: #f20034;
+}
+
+/****************************************
+* Layout
+****************************************/
+
+.container {
+  margin: auto;
+  max-width: 1008px;
+}
+
+.padded {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.padded-top {
+  padding-top: 1.5rem;
+}
+
+.padded-bottom {
+  padding-bottom: 1.5rem;
+}
+
+/****************************************
+* Misc.
+****************************************/
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+/****************************************
+* Neon Animation
+****************************************/
+
+@keyframes neon {
+  0%,
+  20% {
+    text-shadow: none;
+    color: white;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff,
+      0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+    color: #fff;
+  }
+  80%,
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+      0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+    color: #228dff;
+  }
+}

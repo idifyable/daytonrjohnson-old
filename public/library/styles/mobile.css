@@ -1,0 +1,156 @@
+
+
+
+/****************************************
+* Typography
+****************************************/
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  color: #ffffff;
+  font: normal normal 24px/1em 'Lato', sans-serif;
+  text-align: center;
+  text-shadow: 0px 0px 5px black;
+}
+
+/****************************************
+* Header
+****************************************/
+
+header {
+  flex-direction: column-reverse;
+
+}
+
+/****************************************
+* Neon Billboard
+****************************************/
+
+section.neon-billboard {
+  padding: 1rem 0 4rem 0;
+}
+
+section.neon-billboard h1 {
+  font-size: 50px;
+  line-height: 1em;
+  margin-bottom: .5rem;
+}
+
+section.neon-billboard h2 {
+  font-size: 28px;
+}
+
+/****************************************
+* About
+****************************************/
+
+section.about > .container {
+  box-sizing: border-box;
+  display: block;
+  padding: 0 1.5rem;
+}
+
+section.about .container > img,
+section.about .container > div {
+  width: 100%;
+}
+
+section.about .container > img {
+  margin: auto;
+}
+
+/****************************************
+* Projects
+****************************************/
+
+section.projects .container {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+ul.my-projects > li {
+  width: 100%;
+}
+
+/****************************************
+* Case Study
+****************************************/
+
+ul.case-studies > li {
+  display: block;
+}
+
+ul.case-studies > li > div.image-wrapper,
+ul.case-studies > li .wrapper {
+  width: 100%;
+}
+
+ul.case-studies > li .buttons > a {
+  display: inline-block;
+  width: 50%;
+}
+
+
+/****************************************
+* Buttons
+****************************************/
+
+.button,
+button {
+  padding: .7em .9em;
+}
+
+
+/****************************************
+* Footer
+****************************************/
+
+footer .container {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+/****************************************
+* Media Queries
+****************************************/
+
+@media only screen and (max-width: 500px) {
+
+  .wrapper {
+    width: 100vw;
+  }
+
+  #hero-image h1 {
+    font-size: 3em;
+    line-height: 1em;
+    animation: none;
+    text-shadow: none;
+    color: white;
+  }
+
+  #hero-image h2 {
+    font-size: 2em;
+    line-height: 1em;
+    animation: none;
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff,
+                 0 0 15px #fff,
+                 0 0 20px #228dff,
+                 0 0 35px #228dff,
+                 0 0 40px #228dff,
+                 0 0 50px #228dff,
+                 0 0 75px #228dff;
+    color: #228dff;
+  }
+
+  img {
+    width: 100%;
+  }
+}
