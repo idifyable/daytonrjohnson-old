@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
-router.get('/', function(req, res, next)
-{
-  res.sendFile(path.join(__dirname, '../views/about.html'));
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('pages/about.pug', {'page': 'about'});
 });
 
 module.exports = router;

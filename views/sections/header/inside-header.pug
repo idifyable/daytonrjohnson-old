@@ -1,0 +1,13 @@
+// Header
+header.container
+  a.logo-text(href='/') Dayton Johnson
+  nav
+    ul
+      li
+        a(href='/') Home
+      li
+        a(
+          href='/about/',
+          class=(page === 'about') ? 'active' : '') About
+      li
+        a(href='/about/#case-studies') Projects
