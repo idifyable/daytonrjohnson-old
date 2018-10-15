@@ -26,3 +26,6 @@ benchmarks/graphs
 
 # Application Configuration
 config.js
+
+# VS Code
+.vscode/launch.json
