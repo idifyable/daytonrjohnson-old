@@ -5,13 +5,14 @@
 var express = require('express');
 var router = express.Router();
 
+// Controllers
+var projectController = require('../controllers/projectController');
+
 /****************************************
 * Routes
 ****************************************/
 
-router.get('/', function(req, res, next) {
-  res.render('pages/about.pug', {'page': 'about'});
-});
+router.get('/', projectController.projectLoadAll);
 
 /****************************************
 * Exports

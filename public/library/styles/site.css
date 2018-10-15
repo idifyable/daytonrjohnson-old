@@ -205,7 +205,7 @@ section.projects h3 {
   margin-bottom: 2rem;
 }
 
-ul.my-projects {
+ul.my-projects-preview {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -213,19 +213,19 @@ ul.my-projects {
   flex-wrap: wrap;
 }
 
-ul.my-projects > li {
+ul.my-projects-preview > li {
   position: relative;
   width: calc(25% - 1.5rem);
 }
 
-ul.my-projects > li img {
+ul.my-projects-preview > li img {
   display: block;
   width: 100%;
   height: auto;
   border: 4px solid #ffffff;
 }
 
-ul.my-projects > li p {
+ul.my-projects-preview > li p {
   color: #10243c;
   font: normal bold 14px/1em 'Lato';
   text-align: center;
@@ -234,10 +234,10 @@ ul.my-projects > li p {
 }
 
 /****************************************
-* Case Study
+* My Projects
 ****************************************/
 
-ul.case-studies > li {
+ul.my-projects > li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -246,12 +246,12 @@ ul.case-studies > li {
   background-color: #ffffff;
 }
 
-ul.case-studies > li > div.image-wrapper,
-ul.case-studies > li .wrapper {
+ul.my-projects > li > div.image-wrapper,
+ul.my-projects > li .wrapper {
   width: 50%;
 }
 
-ul.case-studies > li img {
+ul.my-projects > li img {
   position: relative;
   bottom: 3rem;
   margin: 0 auto auto auto;
@@ -260,16 +260,16 @@ ul.case-studies > li img {
   box-shadow: 0px 10px 20px #000000;
 }
 
-ul.case-studies > li .wrapper + img {
+ul.my-projects > li .wrapper + img {
   margin: 0;
   margin-left: 3rem;
 }
 
-ul.case-studies > li .buttons {
+ul.my-projects > li .buttons {
   font-size: 0;
 }
 
-ul.case-studies > li .buttons > a:first-of-type button {
+ul.my-projects > li .buttons > a:first-of-type button {
   display: inline-block;
   margin-right: 1rem;
 }
