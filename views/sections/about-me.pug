@@ -5,6 +5,22 @@
       div.padded
         h2 Who Am I?
         h1 Web Developer
-        p Hello, I'm a web developer, designer, and freelancer based in Eau Claire, Wisconsin. I'm passionate about coding and creating useful web-based products. I love learning new technologies and am focused on becoming a master of the web platform.
-        a(href='/about/')
-          button(type='button') More
+        p Hello, I'm a web developer based in Eau Claire, Wisconsin. I'm passionate in coding and creating useful web-based software. I love learning new technologies and am focused on becoming a master of the web platform.
+
+        if page === 'about'
+          p
+            strong Strong Skills:
+          ul.bulleted
+            li HTML/CSS
+            li JavaScript (Frontend)
+            li PHP
+          p
+            strong Growing Skills:
+          ul.bulleted
+            li JavaScript (Backend)
+            li Node.js
+            li Linux Server Administration
+
+        else
+          a(href='/about/')
+            button(type='button') More
