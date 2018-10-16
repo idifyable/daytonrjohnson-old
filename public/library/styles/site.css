@@ -49,6 +49,10 @@ p {
   font: normal normal 16px/1.7em 'Open Sans';
 }
 
+strong {
+  font-weight: bold;
+}
+
 /* List Styles */
 
 ul.bulleted {
