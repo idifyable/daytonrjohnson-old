@@ -2,19 +2,24 @@
 * Imports
 ****************************************/
 
-var express = require('express');
-var router = express.Router();
+var mongoose = require('mongoose');
 
 /****************************************
-* Routes
+* Model
 ****************************************/
 
-router.get('/', function(req, res, next) {
-  res.render('pages/about.pug', {'page': 'about'});
+var ProjectModelSchema = new mongoose.Schema({
+  title: String,
+  image: String,
+  technologies_used: Array,
+  links: {
+    live: String,
+    repo: String
+  }
 });
 
 /****************************************
 * Exports
 ****************************************/
 
-module.exports = router;
+module.exports = mongoose.model('Project', ProjectModelSchema);

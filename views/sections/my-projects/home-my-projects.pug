@@ -1,0 +1,11 @@
+// My Projects
+section.projects.padded
+  .container.padded
+    h3 My Projects
+    ul.my-projects-preview
+      each project in allProjects
+        - var projectID = project.title.toLowerCase().replace(/ /g, '-');
+        li
+          a(href='/projects/#' + projectID)
+            img(src=project.image, alt=project.title)
+            p #{project.title}

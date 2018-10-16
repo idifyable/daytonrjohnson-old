@@ -75,7 +75,7 @@ section.projects .container {
   padding-left: 1.5rem;
 }
 
-ul.my-projects > li {
+ul.my-projects-preview > li {
   width: 100%;
 }
 
@@ -83,20 +83,19 @@ ul.my-projects > li {
 * Case Study
 ****************************************/
 
-ul.case-studies > li {
+ul.my-projects > li {
   display: block;
 }
 
-ul.case-studies > li > div.image-wrapper,
-ul.case-studies > li .wrapper {
+ul.my-projects > li > div.image-wrapper,
+ul.my-projects > li .wrapper {
   width: 100%;
 }
 
-ul.case-studies > li .buttons > a {
+ul.my-projects > li .buttons > a {
   display: inline-block;
   width: 50%;
 }
-
 
 /****************************************
 * Buttons

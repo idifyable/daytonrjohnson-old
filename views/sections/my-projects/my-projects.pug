@@ -1,0 +1,23 @@
+// My Projects
+section.my-projects.padded
+  h3 My Projects
+  ul.my-projects.container.padded
+    each project in allProjects
+      - var projectID = project.title.toLowerCase().replace(/ /g, '-');
+      li(id=projectID)
+        .image-wrapper
+          img(src=project.image, alt=project.title)
+        .wrapper
+          h1 #{project.title}
+          h2 Technologies Used
+          ul.bulleted
+            each tech in project.technologies_used
+              li=tech
+          .buttons
+            if project.links.live
+              a(href=project.links.live, target='_blank')
+                button(type='button') View Live
+
+            if project.links.repo
+              a(href=project.links.repo, target='_blank')
+                button(type='button') View Repo
