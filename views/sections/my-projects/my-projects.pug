@@ -2,7 +2,8 @@
 section.my-projects.padded
   h3 My Projects
   ul.my-projects.container.padded
-    each project in allProjects
+    = allProjects
+    each project in data.projects
       - var projectID = project.title.toLowerCase().replace(/ /g, '-');
       li(id=projectID)
         .image-wrapper
@@ -14,10 +15,10 @@ section.my-projects.padded
             each tech in project.technologies_used
               li=tech
           .buttons
-            if project.links.live
-              a(href=project.links.live, target='_blank')
+            if project.link_live
+              a(href=project.link_live, target='_blank')
                 button(type='button') View Live
 
-            if project.links.repo
-              a(href=project.links.repo, target='_blank')
+            if project.link_repo
+              a(href=project.link_repo, target='_blank')
                 button(type='button') View Repo
