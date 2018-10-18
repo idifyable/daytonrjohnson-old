@@ -26,6 +26,19 @@ h3 {
 
 header {
   flex-direction: column-reverse;
+  padding-bottom: 1.5rem;
+}
+
+header > a.logo-text {
+  line-height: 1.25em;
+  animation: none;
+  transition: font-size .15s ease-in-out;
+}
+
+@media (max-width: 400px) {
+  header > a.logo-text {
+    font-size: 37px;
+  }
 }
 
 /****************************************
@@ -73,9 +86,8 @@ section.about .container > img {
   align-self: flex-start;
   bottom: 3rem;
   margin: auto;
-}
-section.about  img {
-
+  width: 100%;
+  max-width: 325px;
 }
 
 @media (max-width: 535px) {
@@ -98,7 +110,26 @@ section.projects .container {
 }
 
 ul.my-projects-preview > li {
-  width: 100%;
+  width: 50%;
+}
+
+ul.my-projects-preview > li:nth-last-child(1),
+ul.my-projects-preview > li:nth-last-child(2) {
+  margin-bottom: 0;
+}
+
+@media (max-width: 660px) {
+  ul.my-projects-preview > li {
+    width: 100%;
+  }
+
+  ul.my-projects-preview > li:nth-last-child(2) {
+    margin-bottom: 1rem;
+  }
+
+  ul.my-projects-preview > li:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 /****************************************

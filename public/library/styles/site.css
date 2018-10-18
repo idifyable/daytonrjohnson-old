@@ -78,7 +78,7 @@ header {
 
 header > a.logo-text {
   margin: 0 1rem;
-  font: normal normal 42px/68px 'Permanent Marker', cursive;
+  font: normal normal 42px/1.6em 'Permanent Marker', cursive;
   text-align: center;
   text-decoration: none;
   animation: neon 7s ease-in-out infinite alternate;
@@ -155,7 +155,7 @@ section.neon-billboard h2 {
 ****************************************/
 
 section.about {
-  margin-top: 6rem;
+  margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
 
@@ -185,7 +185,6 @@ section.about > .container {
   position: relative;
   display: flex;
   justify-content: space-around;
-  padding: 0 3rem;
   margin-bottom: 3rem;
   background-color: #ffffff;
 }
@@ -236,13 +235,11 @@ ul.my-projects-preview > li {
   width: calc(25% - 1.5rem);
 }
 
-ul.my-projects-preview > li:last-of-type {
-  margin-bottom: 0;
-}
-
 ul.my-projects-preview > li img {
   display: block;
-  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 275px;
   height: auto;
   border: 4px solid #ffffff;
 }
@@ -354,7 +351,8 @@ button {
 ****************************************/
 
 .container {
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
   max-width: 1008px;
 }
 
