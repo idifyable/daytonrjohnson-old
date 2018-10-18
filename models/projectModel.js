@@ -2,24 +2,32 @@
 * Imports
 ****************************************/
 
-var mongoose = require('mongoose');
+var path = require('path');
+var config = require('../config.js');
+var Sequelize = require('sequelize');
 
 /****************************************
 * Model
 ****************************************/
 
-var ProjectModelSchema = new mongoose.Schema({
-  title: String,
-  image: String,
-  technologies_used: Array,
-  links: {
-    live: String,
-    repo: String
-  }
-});
+var Project = function(sequelize, Sequelize)
+{
+  const Project = sequelize.define('Project', {
+    title: Sequelize.TEXT,
+    image: Sequelize.TEXT,
+    technologies_used: Sequelize.ARRAY(Sequelize.TEXT),
+    link_live: Sequelize.TEXT,
+    link_repo: Sequelize.TEXT
+  },
+  {
+    timestamps: false
+  });
+
+  return Project;
+}
 
 /****************************************
 * Exports
 ****************************************/
 
-module.exports = mongoose.model('Project', ProjectModelSchema);
+module.exports = Project;
