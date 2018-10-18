@@ -26,7 +26,14 @@ h3 {
 
 header {
   flex-direction: column-reverse;
+}
 
+/****************************************
+* Navigation
+****************************************/
+
+header > a.logo-text + nav {
+  margin: auto;
 }
 
 /****************************************
@@ -63,7 +70,22 @@ section.about .container > div {
 }
 
 section.about .container > img {
+  align-self: flex-start;
+  bottom: 3rem;
   margin: auto;
+}
+section.about  img {
+
+}
+
+@media (max-width: 535px) {
+  section.about .container > div .skills {
+    display: block;
+  }
+
+  section.about .container > div .skills > div {
+    width: 100%;
+  }
 }
 
 /****************************************
@@ -85,6 +107,9 @@ ul.my-projects-preview > li {
 
 ul.my-projects > li {
   display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: calc(100% - 2rem);
 }
 
 ul.my-projects > li > div.image-wrapper,
@@ -103,9 +128,8 @@ ul.my-projects > li .buttons > a {
 
 .button,
 button {
-  padding: .7em .9em;
+  padding: 0.6em;
 }
-
 
 /****************************************
 * Footer
