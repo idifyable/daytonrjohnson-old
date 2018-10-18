@@ -2,46 +2,50 @@
 * Imports
 ****************************************/
 
-var projectModel = require('../models/projectModel');
+var models = require('../models/');
 
 /****************************************
-* Load projects page
+* Load projects and render projects page
 ****************************************/
 
-projectLoadAll = function(req, res)
+projectLoadAll = function(req, res, next)
 {
-  projectModel.find({}).exec(function(err, allProjectsData)
-  {
-    if(err)
+  models.project.findAll({raw: true})
+    .then(function(allProjectsData)
     {
-      return next(err);
-    }
-
-    res.render('pages/projects.pug', {
-      page: 'projects',
-      allProjects: allProjectsData
+      res.render('pages/projects.pug', {
+        page: 'projects',
+        data: {
+          projects: allProjectsData
+        }
+      });
+    })
+    .catch(function(err)
+    {
+      console.log(err);
     });
-  });
 }
 
 /****************************************
-* Load all projects on home page
+* Load projects and render home page
 ****************************************/
 
 projectLoadAllHome = function(req, res)
 {
-  projectModel.find({}).exec(function(err, allProjectsData)
-  {
-    if(err)
+  models.project.findAll({raw: true})
+    .then(function(allProjectsData)
     {
-      return next(err);
-    }
-
-    res.render('pages/index.pug', {
-      page: 'home',
-      allProjects: allProjectsData
+      res.render('pages/index.pug', {
+        page: 'home',
+        data: {
+          projects: allProjectsData
+        }
+      });
+    })
+    .catch(function(err)
+    {
+      console.log(err);
     });
-  });
 }
 
 /****************************************
