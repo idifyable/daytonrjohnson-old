@@ -169,7 +169,7 @@ section.about img {
   max-width: 350px;
   border: 15px solid #ffffff;
   box-shadow: 0px 20px 30px grey;
-  bottom: initial;
+  bottom: 3rem;
   margin: 0;
   width: 33.333%;
   margin-right: 3rem;
@@ -177,7 +177,6 @@ section.about img {
 
 section.about.home img {
   align-self: flex-start;
-  bottom: 3rem;
   margin-right: 3rem;
 }
 
@@ -186,6 +185,8 @@ section.about > .container {
   display: flex;
   justify-content: space-around;
   margin-bottom: 3rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
   background-color: #ffffff;
 }
 
