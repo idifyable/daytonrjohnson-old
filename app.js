@@ -10,7 +10,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose');
+var Sequelize = require('sequelize');
 
 // Controllers
 var projectController = require('./controllers/projectController');
@@ -30,47 +30,25 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+global.env = app.get('env');
+
 // HTML minification
-if (app.get('env') === 'development') {
+if(app.get('env') === 'development')
+{
   app.locals.pretty = true;
 }
-
-/****************************************
-* Enviroment configuration
-****************************************/
-
-var enviroment = app.get('env') || 'production';
-var enviromentConfig = config[enviroment];
 
 /****************************************
 * Setup middleware
 ****************************************/
 
-app.use(logger('dev'));
+app.use(logger('tiny', {
+  skip: function (req, res) { return res.statusCode < 400 }
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-/****************************************
-* Set up Mongoose DB connection
-****************************************/
-
-var databaseConfig = enviromentConfig.database;
-var databaseConnectionString = 'mongodb://' + databaseConfig.hostname + ':' + databaseConfig.port;
-
-mongoose.connect(databaseConnectionString + '/projects', {
-  useNewUrlParser: true
-});
-
-// Get Mongoose to use the global promise library
-mongoose.Promise = global.Promise;
-
-// Get the default connection
-var db = mongoose.connection;
-
-// Attach database error handler
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 /****************************************
 * Set up routes

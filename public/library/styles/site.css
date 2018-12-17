@@ -77,7 +77,8 @@ header {
 }
 
 header > a.logo-text {
-  font: normal normal 42px/68px 'Permanent Marker', cursive;
+  margin: 0 1rem;
+  font: normal normal 42px/1.6em 'Permanent Marker', cursive;
   text-align: center;
   text-decoration: none;
   animation: neon 7s ease-in-out infinite alternate;
@@ -154,8 +155,8 @@ section.neon-billboard h2 {
 ****************************************/
 
 section.about {
-  margin-top: 6rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 section.about.home {
@@ -163,21 +164,29 @@ section.about.home {
 }
 
 section.about img {
+  align-self: center;
   position: relative;
-  align-self: flex-start;
-  bottom: 3rem;
-  margin: 0 auto auto auto;
   max-width: 350px;
   border: 15px solid #ffffff;
   box-shadow: 0px 20px 30px grey;
+  bottom: 3rem;
+  margin: 0;
+  width: 33.333%;
+  margin-right: 3rem;
+}
+
+section.about.home img {
+  align-self: flex-start;
+  margin-right: 3rem;
 }
 
 section.about > .container {
   position: relative;
   display: flex;
   justify-content: space-around;
-  padding: 0 3rem;
   margin-bottom: 3rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
   background-color: #ffffff;
 }
 
@@ -192,13 +201,18 @@ section.about .container:after {
   background-color: lightslategray;
 }
 
-section.about .container > img {
-  width: 33.333%;
-  margin-right: 3rem;
-}
-
 section.about .container > div {
   width: 66.666%;
+}
+
+section.about .container > div .skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+section.about .container > div .skills > div {
+  width: calc(50% - 1rem);
 }
 
 /****************************************
@@ -224,7 +238,9 @@ ul.my-projects-preview > li {
 
 ul.my-projects-preview > li img {
   display: block;
-  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 275px;
   height: auto;
   border: 4px solid #ffffff;
 }
@@ -248,6 +264,10 @@ ul.my-projects > li {
   padding: 1.5rem;
   margin-bottom: 3rem;
   background-color: #ffffff;
+}
+
+ul.my-projects > li:last-of-type {
+  margin-bottom: 0;
 }
 
 ul.my-projects > li > div.image-wrapper,
@@ -332,7 +352,8 @@ button {
 ****************************************/
 
 .container {
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
   max-width: 1008px;
 }
 

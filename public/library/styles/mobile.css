@@ -26,7 +26,27 @@ h3 {
 
 header {
   flex-direction: column-reverse;
+  padding-bottom: 1.5rem;
+}
 
+header > a.logo-text {
+  line-height: 1.25em;
+  animation: none;
+  transition: font-size .15s ease-in-out;
+}
+
+@media (max-width: 400px) {
+  header > a.logo-text {
+    font-size: 37px;
+  }
+}
+
+/****************************************
+* Navigation
+****************************************/
+
+header > a.logo-text + nav {
+  margin: auto;
 }
 
 /****************************************
@@ -63,7 +83,21 @@ section.about .container > div {
 }
 
 section.about .container > img {
+  align-self: flex-start;
+  bottom: 3rem;
   margin: auto;
+  width: 100%;
+  max-width: 325px;
+}
+
+@media (max-width: 535px) {
+  section.about .container > div .skills {
+    display: block;
+  }
+
+  section.about .container > div .skills > div {
+    width: 100%;
+  }
 }
 
 /****************************************
@@ -76,7 +110,26 @@ section.projects .container {
 }
 
 ul.my-projects-preview > li {
-  width: 100%;
+  width: 50%;
+}
+
+ul.my-projects-preview > li:nth-last-child(1),
+ul.my-projects-preview > li:nth-last-child(2) {
+  margin-bottom: 0;
+}
+
+@media (max-width: 660px) {
+  ul.my-projects-preview > li {
+    width: 100%;
+  }
+
+  ul.my-projects-preview > li:nth-last-child(2) {
+    margin-bottom: 1rem;
+  }
+
+  ul.my-projects-preview > li:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 /****************************************
@@ -85,6 +138,9 @@ ul.my-projects-preview > li {
 
 ul.my-projects > li {
   display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: calc(100% - 2rem);
 }
 
 ul.my-projects > li > div.image-wrapper,
@@ -103,9 +159,8 @@ ul.my-projects > li .buttons > a {
 
 .button,
 button {
-  padding: .7em .9em;
+  padding: 0.6em;
 }
-
 
 /****************************************
 * Footer
