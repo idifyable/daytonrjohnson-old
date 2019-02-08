@@ -13,7 +13,9 @@ var db = {};
 
 var sequelize = new Sequelize(config.database.name, config.database.username, config.database.password, {
   dialect: 'postgres',
-  operatorsAliases: false
+  operatorsAliases: false,
+  port: process.env.POSTGRES_PORT,
+  host: 'postgres', // Docker DB service name
 });
 
 sequelize.authenticate()
