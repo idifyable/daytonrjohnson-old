@@ -1,40 +1,29 @@
-var enviroment = process.env.NODE_ENV;
+/****************************************
+ * Imports
+ ****************************************/
 
-if(typeof enviroment == 'undefined')
-{
-  enviroment = 'development';
-  console.warn('NODE_ENV is undefined.');
-}
+var fs = require('fs');
 
 /****************************************
 * Configuration
 ****************************************/
 
+const POSTGRES_DB = fs.readFileSync('/run/secrets/POSTGRES_DB', 'utf8');
+const POSTGRES_USER = fs.readFileSync('/run/secrets/POSTGRES_USER', 'utf8');
+const POSTGRES_PASSWORD = fs.readFileSync('/run/secrets/POSTGRES_PASSWORD', 'utf8');
+const POSTGRES_HOST = process.env.POSTGRES_HOST;
+
 var config = {
-  'development': {
-    'database': {
-      'name': '',
-      'username': '',
-      'password': ''
-    }
-  },
-  'production': {
-    'database': {
-      'name': '',
-      'username': '',
-      'password': ''
-    }
+  'database': {
+    'host': POSTGRES_HOST,
+    'name': POSTGRES_DB,
+    'username': POSTGRES_USER,
+    'password': POSTGRES_PASSWORD
   }
 }
-
-/****************************************
-* Enviroment Configuration
-****************************************/
-
-var enviromentConfig = config[enviroment];
 
 /****************************************
 * Exports
 ****************************************/
 
-module.exports = enviromentConfig;
+module.exports = config;
