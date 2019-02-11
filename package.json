@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "docker-compose up"
+    "start": "node ./bin/www",
+    "devstart": "SET DEBUG=daytonrjohnson:* & nodemon run devstart"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -16,9 +17,6 @@
     "sequelize": "^4.39.0"
   },
   "devDependencies": {
-    "eslint": "^5.13.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
     "nodemon": "^1.18.4"
   }
 }
