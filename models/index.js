@@ -1,46 +1,42 @@
-/****************************************
+/**
 * Imports
-****************************************/
+*/
 
-var path = require('path');
-var config = require('../config.js');
-var Sequelize = require('sequelize');
-var db = {};
+const debug = require('debug')('daytonrjohnson:server');
+const Sequelize = require('sequelize');
+const projectModel = require('./projectModel.js');
+const config = require('../config.js');
 
-/****************************************
-* Database Connection
-****************************************/
 
-var sequelize = new Sequelize(config.database.name, config.database.username, config.database.password, {
-  dialect: 'postgres',
-  operatorsAliases: false,
-  port: process.env.POSTGRES_PORT,
-  host: 'postgres', // Docker DB service name
-});
+module.exports = async function getModels() {
+  const db = {};
 
-sequelize.authenticate()
-  .then(() => {
-    console.log('Database connection succeeded.');
-  })
-  .catch(err => {
-    console.error('Database connection failed: ', err);
-  })
+  // Configure Sequelize database connection
+  const sequelize = new Sequelize(
+    config.database.name,
+    config.database.username,
+    config.database.password, {
+      dialect: 'postgres',
+      operatorsAliases: false,
+      port: process.env.POSTGRES_PORT,
+      host: 'postgres', // Docker DB service name
+    },
+  );
 
-/****************************************
-* Models
-****************************************/
+  // Pass along sequelize
+  db.sequelize = sequelize;
+  db.Sequelize = Sequelize;
 
-db.project = require('./projectModel.js')(sequelize, Sequelize);
+  // Authenticate
+  try {
+    await sequelize.authenticate();
 
-/****************************************
-* Pass along sequelize
-****************************************/
+    // Add models to db object
+    db.project = await projectModel(sequelize, Sequelize);
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
-/****************************************
-* Exports
-****************************************/
-
-module.exports = db;
+    debug(db.project);
+    return db;
+  } catch (err) {
+    throw err;
+  }
+};

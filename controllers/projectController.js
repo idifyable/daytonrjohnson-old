@@ -1,55 +1,55 @@
-/****************************************
+/**
 * Imports
-****************************************/
+*/
 
-var models = require('../models/');
+const getModels = require('../models/');
 
-/****************************************
+/**
 * Load projects and render projects page
-****************************************/
+*/
 
-projectLoadAll = function(req, res, next)
-{
-  models.project.findAll({raw: true})
-    .then(function(allProjectsData)
-    {
+async function projectLoadAll(req, res, next) {
+  const models = await getModels();
+
+  models.project.findAll({ raw: true })
+    .then((allProjectsData) => {
       res.render('pages/projects.pug', {
         page: 'projects',
         data: {
-          projects: allProjectsData
-        }
+          projects: allProjectsData,
+        },
       });
     })
-    .catch(function(err)
-    {
-      console.log(err);
+    .catch((err) => {
+      next(err);
     });
 }
 
-/****************************************
-* Load projects and render home page
-****************************************/
+/**
+ * Load projects and render home page
+ */
 
-projectLoadAllHome = function(req, res)
-{
-  models.project.findAll({raw: true})
-    .then(function(allProjectsData)
-    {
+async function projectLoadAllHome(req, res, next) {
+  const models = await getModels();
+  models.project.findAll({ raw: true })
+    .then((allProjectsData) => {
       res.render('pages/index.pug', {
         page: 'home',
         data: {
-          projects: allProjectsData
-        }
+          projects: allProjectsData,
+        },
       });
     })
-    .catch(function(err)
-    {
-      console.log(err);
+    .catch((err) => {
+      next(err);
     });
 }
 
-/****************************************
+/**
 * Exports
-****************************************/
+*/
 
-module.exports = {projectLoadAll, projectLoadAllHome};
+module.exports = {
+  projectLoadAll,
+  projectLoadAllHome,
+};
