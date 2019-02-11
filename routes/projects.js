@@ -1,22 +1,21 @@
-/**
- * Imports
- */
+/****************************************
+* Imports
+****************************************/
 
-const express = require('express');
-
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
 // Controllers
-const projectController = require('../controllers/projectController');
+var projectController = require('../controllers/projectController');
 
-/**
- * Routes
- */
+/****************************************
+* Routes
+****************************************/
 
 router.get('/', projectController.projectLoadAll);
 
-/**
- * Exports
- * */
+/****************************************
+* Exports
+****************************************/
 
 module.exports = router;

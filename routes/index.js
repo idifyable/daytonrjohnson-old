@@ -1,25 +1,21 @@
-/**
- * Imports
- */
+/****************************************
+* Imports
+****************************************/
 
-const express = require('express');
+var express = require('express');
+var router = express.Router();
 
-const router = express.Router();
+// Controllers
+var projectController = require('../controllers/projectController');
 
-/**
- * Controllers
- */
-
-const projectController = require('../controllers/projectController');
-
-/**
- * Routes
- */
+/****************************************
+* Routes
+****************************************/
 
 router.get('/', projectController.projectLoadAllHome);
 
-/**
- * Exports
- */
+/****************************************
+* Exports
+****************************************/
 
 module.exports = router;

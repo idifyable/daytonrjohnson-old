@@ -1,21 +1,20 @@
-/**
- * Imports
- */
+/****************************************
+* Imports
+****************************************/
 
-const express = require('express');
+var express = require('express');
+var router = express.Router();
 
-const router = express.Router();
+/****************************************
+* Routes
+****************************************/
 
-/**
- * Routes
- */
-
-router.get('/', (req, res) => {
-  res.render('pages/about.pug', { page: 'about' });
+router.get('/', function(req, res, next) {
+  res.render('pages/about.pug', {'page': 'about'});
 });
 
-/**
- * Exports
- */
+/****************************************
+* Exports
+****************************************/
 
 module.exports = router;

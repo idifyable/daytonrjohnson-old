@@ -1,24 +1,30 @@
-/**
+/****************************************
 * Imports
-*/
+****************************************/
+
+var config = require('./config');
 
 // Modules
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var Sequelize = require('sequelize');
+
+// Controllers
+var projectController = require('./controllers/projectController');
 
 // Routers
-const indexRouter = require('./routes/index');
-const aboutRouter = require('./routes/about');
-const projectsRouter = require('./routes/projects');
+var indexRouter = require('./routes/index');
+var aboutRouter = require('./routes/about');
+var projectsRouter = require('./routes/projects');
 
-/**
- * Setup app
- */
+/****************************************
+* Setup app
+****************************************/
 
-const app = express();
+var app = express();
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,41 +33,44 @@ app.set('view engine', 'pug');
 global.env = app.get('env');
 
 // HTML minification
-if (app.get('env') === 'development') {
+if(app.get('env') === 'development')
+{
   app.locals.pretty = true;
 }
 
-/**
- * Setup middleware
- */
+/****************************************
+* Setup middleware
+****************************************/
 
 app.use(logger('tiny', {
-  skip(req, res) { return res.statusCode < 400; },
+  skip: function (req, res) { return res.statusCode < 400 }
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-/**
- * Set up routes
- */
+/****************************************
+* Set up routes
+****************************************/
 
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/projects', projectsRouter);
 
-/**
- * Error handling
- */
+/****************************************
+* Error handling
+****************************************/
 
 // Catch 404 and forward to error handler
-app.use((req, res, next) => {
+app.use(function(req, res, next)
+{
   next(createError(404));
 });
 
 // Error handler
-app.use((err, req, res) => {
+app.use(function(err, req, res, next)
+{
   // Set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -71,8 +80,8 @@ app.use((err, req, res) => {
   res.render('error');
 });
 
-/**
- * Exports
- */
+/****************************************
+* Exports
+****************************************/
 
 module.exports = app;
