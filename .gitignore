@@ -31,5 +31,5 @@ config.js
 .vscode/launch.json
 
 # Docker
-secrets/**
+/**/secrets/**
 !secrets/README.md

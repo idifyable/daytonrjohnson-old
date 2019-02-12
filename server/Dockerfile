@@ -15,13 +15,13 @@ RUN npm i npm@latest -g
 
 # Install dependencies first
 WORKDIR /opt
-COPY package.json package-lock.json* ./
+COPY ./../package.json package-lock.json* ./
 RUN npm install --no-optional && npm cache clean --force
 ENV PATH /opt/node_modules/.bin:$PATH
 
 # Copy in our source code last, as it changes the most
 WORKDIR /opt/app
-COPY . /opt/app
+COPY ../src /opt/app
 
 # Install Dockerized, used for database readiness listening
 RUN apk add --no-cache openssl
