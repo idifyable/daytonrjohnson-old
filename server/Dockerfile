@@ -10,25 +10,25 @@ ARG PORT=3000
 ENV PORT $PORT
 EXPOSE $PORT
 
-# Update to latest npm
-RUN npm i npm@latest -g
-
-# Install dependencies first
-WORKDIR /opt
-COPY ./../package.json package-lock.json* ./
-RUN npm install --no-optional && npm cache clean --force
-ENV PATH /opt/node_modules/.bin:$PATH
-
-# Copy in our source code last, as it changes the most
-WORKDIR /opt/app
-COPY ../src /opt/app
-
 # Install Dockerized, used for database readiness listening
 RUN apk add --no-cache openssl
 ENV DOCKERIZE_VERSION v0.6.1
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+
+# Update to latest npm
+RUN npm i npm@latest -g
+
+# Install dependencies first
+WORKDIR /opt
+COPY package.json package-lock.json* ./
+RUN npm install --no-optional && npm cache clean --force
+ENV PATH /opt/node_modules/.bin:$PATH
+
+# Copy in our source code last, as it changes the most
+WORKDIR /opt/app
+COPY ./src /opt/app
 
 USER node
 EXPOSE 80
