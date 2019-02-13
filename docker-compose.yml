@@ -3,8 +3,9 @@ services:
 
 # NodeJS Backend Service #
   node:
+    container_name: "server"
     build:
-      context: .
+      context: ./server
       args:
         NODE_ENV: development
     command:  ["-wait", "tcp://postgres:5432", "../node_modules/.bin/nodemon", "-L", "--inspect=0.0.0.0:9229", "./bin/www"]
@@ -13,10 +14,10 @@ services:
       - "9229:9229" # Node Debug
     volumes:
       # Application data
-      - .:/opt/app
+      - ./server/src:/opt/app
       # By bind-mounting these two files, you can add packages during development without rebuilding
-      - ./package.json:/opt/package.json
-      - ./package-lock.json:/opt/package-lock.json
+      - ./server/package.json:/opt/package.json
+      - ./server/package-lock.json:/opt/package-lock.json
     secrets:
       - POSTGRES_DB
       - POSTGRES_USER
@@ -41,16 +42,16 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
     environment:
-      POSTGRES_USER_FILE: /run/secrets/POSTGRES_USER
-      POSTGRES_PASSWORD_FILE: /run/secrets/POSTGRES_PASSWORD
-      POSTGRES_DB_FILE: /run/secrets/POSTGRES_DB
+      POSTGRES_USER_FILE: /config/run/secrets/POSTGRES_USER
+      POSTGRES_PASSWORD_FILE: /config/run/secrets/POSTGRES_PASSWORD
+      POSTGRES_DB_FILE: /config/run/secrets/POSTGRES_DB
 
 # Docker Secrets
 secrets:
-  # Database Secrets
+  # Postgres Secrets
   POSTGRES_DB:
-    file: ./secrets/development/POSTGRES_DB
+    file: ./config/secrets/development/POSTGRES_DB
   POSTGRES_USER:
-    file: ./secrets/development/POSTGRES_USER
+    file: ./config/secrets/development/POSTGRES_USER
   POSTGRES_PASSWORD:
-    file: ./secrets/development/POSTGRES_PASSWORD
+    file: ./config/secrets/development/POSTGRES_PASSWORD
